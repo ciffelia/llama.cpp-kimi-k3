@@ -30,12 +30,12 @@ jobs:
         with:
           context: https://github.com/unslothai/llama.cpp.git#efc8bc38f0a9950cbb10ccef2cf48b951c39d3b2
           file: .devops/cuda.Dockerfile
-          target: server
+          target: full
           build-args: |
-            CUDA_DOCKER_ARCH=120
+            CUDA_DOCKER_ARCH=120 -DGGML_RPC=ON
           tags: |
-            ghcr.io/ciffelia/llama.cpp-kimi-k3:server-cuda
-            ghcr.io/ciffelia/llama.cpp-kimi-k3:server-cuda-git-${{ github.sha }}
+            ghcr.io/ciffelia/llama.cpp-kimi-k3:full-cuda
+            ghcr.io/ciffelia/llama.cpp-kimi-k3:full-cuda-git-${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/main' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
