@@ -37,3 +37,5 @@ jobs:
             ghcr.io/ciffelia/llama.cpp-kimi-k3:server-cuda
             ghcr.io/ciffelia/llama.cpp-kimi-k3:server-cuda-git-${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/main' }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
