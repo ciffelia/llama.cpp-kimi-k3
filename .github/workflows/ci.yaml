@@ -28,7 +28,7 @@ jobs:
       - name: Build (and push)
         uses: docker/build-push-action@v7
         with:
-          context: https://github.com/unslothai/llama.cpp#efc8bc38f0a9950cbb10ccef2cf48b951c39d3b2
+          context: https://github.com/unslothai/llama.cpp.git#efc8bc38f0a9950cbb10ccef2cf48b951c39d3b2
           file: .devops/cuda.Dockerfile
           target: server
           build-args: |
